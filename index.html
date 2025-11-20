@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PDLE 4 C1 – Digital Magazine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="magazine-bg">
+    <header class="top-bar">
+      <div class="top-left">PDLE 4 C1 – Digital Magazine</div>
+      <div class="top-right" id="pageLabel">Page 1 of 25</div>
+    </header>
+
+    <div class="flipbook-wrapper">
+      <button class="arrow arrow-left" id="arrowPrev">‹</button>
+
+      <div id="flipbook">
+        <!-- 1: TAPA (single) -->
+        <div class="page hard cover">
+          <div class="page-inner cover-inner">
+            <div class="cover-logo">
+              <img src="logo.png" alt="UNPAZ logo" />
+            </div>
+
+            <div class="cover-main">
+              <p class="tiny-label">UNIVERSIDAD NACIONAL DE JOSÉ C. PAZ</p>
+              <h1>PDLE 4 C1</h1>
+              <p class="subtitle">Teacher: <strong>Gisela Anahí Laurent</strong></p>
+              <p class="tagline">Creative Writing · Short Story Rewrites</p>
+
+              <div class="cover-divider"></div>
+
+              <p class="cover-blurb">
+                This digital magazine compiles creative rewrites inspired by
+                <em>"The Flowers"</em> by Alice Walker, produced by students of PDLE 4 C1
+                at the Universidad Nacional de José C. Paz.
+              </p>
+              <p class="cover-blurb">
+                Each student reimagined the ending of the story, reflecting on themes such
+                as innocence, memory, loss and hope. The following spreads present their
+                voices and interpretations in a visual, magazine-like format.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2: FLORES (primer pliego, izquierda) -->
+        <div class="page content-page image-left">
+          <div class="page-inner">
+            <figure class="photo-figure">
+              <img src="flowers.jpg" alt="White daisies" />
+              <figcaption>
+                Daisies, echoing the imagery of <em>"The Flowers"</em> by Alice Walker.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 3: GABRIELA (primer pliego, derecha) -->
+        <div class="page content-page story-right">
+          <div class="page-inner">
+            <h2>Gabriela Maribel Saucedo</h2>
+            <p>
+              Myop stood motionless, gazing at the lifeless man on the ground.
+              For an instant, she hoped he might still be alive. Filled with fear
+              and compassion she ran back home to ask her parents and neighbors
+              for help.
+            </p>
+            <p>
+              When they arrived, they gently explained that nothing more could be
+              done for him. Overcome with sadness, Myop asked them to plant a
+              walnut tree where the man lay surrounded by daisies to honor his
+              memory.
+            </p>
+            <p>
+              As the years passed, the tree grew tall and strong and flowers
+              bloomed each spring. For Myop, they became symbols not only of
+              death, but also of memory, peace, and the enduring power of
+              compassion.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4: DIENTE DE LEÓN (segundo pliego, izquierda) -->
+        <div class="page content-page image-left">
+          <div class="page-inner">
+            <figure class="photo-figure">
+              <img src="dientedeleon.png" alt="Dandelion seeds blowing in the wind" />
+              <figcaption>
+                Dandelion seeds drifting away, echoing Myop’s scattered thoughts and questions.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 5: NERINA (segundo pliego, derecha) -->
+        <div class="page content-page story-right">
+          <div class="page-inner">
+            <h2>Acosta Nerina</h2>
+            <p>
+              Myop's mind started to spin restlessly as a lot of questions flooded her thoughts:
+              Who was this poor man? What had happened to him? Why was his head on the side
+              with all of his teeth broken? A freezing chill went down her spine. Who could be
+              capable of such brutality? Who could have done such a thing?
+            </p>
+            <p>
+              Everything around her seemed to blur. She felt queasy and weak, her stomach turned
+              upside down.
+            </p>
+            <p>
+              She ran blindly back to her house, blinded by tears, and told her mother what she
+              had found in the woods. They hugged each other tightly for a while, tears streaming
+              down their faces, and then they decided to return to the woods together.
+            </p>
+            <p>
+              On their path, the mother started to tell her about the struggles that the Black
+              community had had to face over time and how most of them were illegally murdered.
+            </p>
+            <p>
+              Once they reached the spot, her mother picked up all the loose flowers while Myop
+              looked down at the man and at her small dark hands.
+            </p>
+            <p>
+              The flowers she had gathered no longer seemed bright and colourful as before;
+              they now appeared frail, like everything alive.
+            </p>
+            <p>
+              Suddenly, her mother started to sing a song Myop had never heard before, but it
+              soothed her soul. Right there, with an armful of flowers, while holding her mother's
+              hand, she realized that she belonged to a greater family. A sense of connection
+              flourished beyond her small world.
+            </p>
+          </div>
+        </div>
+
+        <!-- 6: SHADOWFLOWERY (tercer pliego, izquierda) -->
+        <div class="page content-page image-left">
+          <div class="page-inner">
+            <figure class="photo-figure">
+              <img src="shadowflowery.jpg" alt="Silhouette filled with flowers and butterflies" />
+              <figcaption>
+                <em>Shadowflowery</em> – a silhouette blooming with memories, grief and resistance.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 7: MALENA (tercer pliego, derecha) -->
+        <div class="page content-page story-right">
+          <div class="page-inner">
+            <h2>Malena Coronel</h2>
+            <p>
+              She showed no sign of fear. She spent a moment looking at the remains of what once
+              had been a life. Her eyes were quiet, her mind blank—not because she understood,
+              but because she didn’t need to. The rope, the rotted clothes, the bones – none of it
+              frightened her. She had seen things like this before, in shadows, in silences that
+              belonged to innocent people. She had always been on that side, where darkness and
+              death had walked beside her.
+            </p>
+            <p>
+              She picked two flowers: one for her mother, the other for the life silenced by man.
+              When she stood up again, she contemplated the land—it was calm. Just another day,
+              another place, the same story with a different victim. On her way back home, she
+              understood she had never known summer. It had always been winter—not only for her,
+              but for her brothers, her sisters, her people.
+            </p>
+          </div>
+        </div>
+
+        <!-- 8: PICKINGFLOWERS (cuarto pliego, izquierda) -->
+        <div class="page content-page image-left">
+          <div class="page-inner">
+            <figure class="photo-figure">
+              <img src="pickingflowers.jpg" alt="Girl in an orange dress picking flowers in a field" />
+              <figcaption>
+                <em>Picking Flowers</em> – Myop in a wide summer field, moments before everything changes.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 9: SOTELO IARA (cuarto pliego, derecha) -->
+        <div class="page content-page story-right">
+          <div class="page-inner">
+            <h2>Sotelo Iara</h2>
+            <p>
+              He was a tall man from his feet to his neck, covering a long space. His head lay beside him.
+              When she pushed back the leaves and layers of earth and debris, Myop saw that he’d had large
+              white teeth, all of them cracked or broken, long fingers and very big bones. All his clothes
+              had rotted away except some threads of blue denim from his overalls. The buckles of the
+              overall had turned green.
+            </p>
+            <p>
+              Myop was disturbed; she gazed around the spot with interest. Very near where she’d stepped
+              into the head, a colorful, shining, peaceful pillow of flowers grew up. Myop bent down to
+              pick the most beautiful. A long brown and rough shape appeared between the colors, and
+              Myop observed carefully. The body dragged slowly, hypnotizing and dancing on the ground.
+            </p>
+            <p>
+              She stood up slowly, her eyes full of fear and never losing sight of the dancing body.
+              The bouquet of flowers fell as Myop jumped quickly away: her skinny, short legs were
+              brave enough to take her back home. The summer was over, and her flowers were forgotten.
+            </p>
+          </div>
+        </div>
+
+        <!-- 10: SKELETONFLOWER (quinto pliego, izquierda) -->
+        <div class="page content-page image-left">
+          <div class="page-inner">
+            <figure class="photo-figure">
+              <img src="skeletonflower.jpg" alt="Skeleton lying among colorful flowers holding a butterfly" />
+              <figcaption>
+                Bones resting in a sea of flowers, between death, memory and fragile beauty.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 11: SANTILLÁN MADELEN (quinto pliego, derecha) -->
+        <div class="page content-page story-right story-tight">
+          <div class="page-inner">
+            <h2>Santillán Madelen</h2>
+            <p>
+              Myop laid down her flowers…
+            </p>
+            <p>
+              A cold breeze brushed her skin like a warning, making her whole body shiver. Who was that
+              person? The cloth looked familiar, as if she had seen it before. It might have been their
+              family friendly neighbour who waved at them every time they met. Or the old man who sang
+              in the church every Sunday. It could also be the young man who sold vegetables at the market.
+              Even her father's brother was around that height too. Realization hit her suddenly. This
+              person was someone's brother, father, or son, but now it was just bones and dirty clothes.
+              The wind moved the trees around; a dry leaf flew around until it lay on top of the corpse.
+              Soon there would be no more than dust, leaves, and bushes hiding the traces of man's cruelty.
+            </p>
+            <p>
+              Myop picked up the flowers again. Slowly approaching, she placed them around the remains.
+              Then she moved around and collected more, came back, and placed them next to the others,
+              repeating her actions until she felt at peace. She gently covered him with flowers, not to
+              hide the truth but to show a last gesture of respect. She did not know who this person was,
+              but just leaving it as it was did not feel right. The moment she turned around and walked
+              home, the wind moved gently through the trees, as if saying farewell.
+            </p>
+            <p>
+              Myop reached her house as the sky shaded in red and orange. The sun was hiding, and she
+              felt cold but calm in the silent afternoon. The smell of cornbread and sweet potatoes filled
+              the air. Inside, her mother was finishing dinner while her father was resting on his chair.
+              The atmosphere felt heavy. He looked straight into her eyes; he was not old yet his eyes
+              reflected years of wisdom. With trembling voices they told her to be cautious, never to
+              wander alone, and always to return home before sunset. She understood their despair. She
+              was now aware of the world, its beauty and its cruelty, but she believed that there were
+              small ways one could show kindness. Even though she didn't know him, she understood that
+              no one deserved to be abandoned like that.I also intend to keep the message of loss of innocence in
+              a positive way, recognizing that she needs to be careful in this society but never lose her kindness.
+            </p>
+          </div>
+        </div>
+
+        <!-- 12: BLOWINGFLOWER (sexto pliego, izquierda) -->
+        <div class="page content-page image-left">
+          <div class="page-inner">
+            <figure class="photo-figure">
+              <img src="blowingflower.jpg" alt="Girl smelling a small bouquet of colorful flowers" />
+              <figcaption>
+                A moment of tenderness, Myop breathing in the fragile scent of summer.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 13: JULIETA REDOLFI (sexto pliego, derecha) -->
+        <div class="page content-page story-right">
+          <div class="page-inner">
+            <h2>Julieta Redolfi</h2>
+            <p>
+              Myop froze for a long moment, staring at the broken face beneath the leaves; she couldn’t
+              even scream. The forest felt heavier now, but the fear in her chest slowly changed into
+              something else. She grabbed the flowers in her hand, strong and determined. Instead of
+              leaving them beside the dead man, she turned around and began to run as fast as she could.
+              The air around her seemed darker, the atmosphere was spooky, but the way back home was
+              clear and vibrant. At that moment, she knew she was doing the right thing… running? No!
+              Not abandoning anyone… even dead.
+            </p>
+            <p>
+              When she reached her family’s cabin, she called her mother and father and told them what
+              she had found. Her parents walked to the place, silent and solemn. When they saw the
+              remains, they decided to give the man a dignified burial. They buried the man together
+              under a big tree. Later, Myop came and placed her flowers gently on the ground, promising
+              never to forget that moment. That night, as the moon shone, Myop felt something new
+              growing inside her: not fear, not sadness… but understanding and strength.
+            </p>
+          </div>
+        </div>
+
+        <!-- 14: HUGGING (séptimo pliego, izquierda) -->
+        <div class="page content-page image-left">
+          <div class="page-inner">
+            <figure class="photo-figure">
+              <img src="hugging.jpeg" alt="Mother hugging her daughter in a warm, textured collage" />
+              <figcaption>
+                A mother’s embrace, holding together grief, guilt and love.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 15: LUISINA FLORENTIN (séptimo pliego, derecha) -->
+        <div class="page content-page story-right story-tight">
+          <div class="page-inner">
+            <h2>Luisina Florentín</h2>
+            <p>
+              And the summer was over for Myop. It had lasted a whole decade, to her family’s delight,
+              for her mother had no memory of such innocent, joyful moments in her almost three decades
+              on earth. Perhaps the day little Myop was born had been a brief spring in her life — oh,
+              how much she had prayed to God for a baby to love and care for, and oh, how bitterly she
+              had wept when she realized what she had done; condemning that little bundle of love to so
+              much pain and cruelty.
+            </p>
+            <p>
+              Myop came home that day and told her mother about what she had seen. At first, she muttered
+              loose words that made no sense — “woods… big man… scary… rope…” — and then, fully sobbing,
+              she finally understood it all: “Dead, Mama!”
+            </p>
+            <p>
+              The steady, gentle shuck-shuck of the corn as her mother peeled it stopped, and the yellow,
+              tired hands of her progenitor gathered her into a crushing hug. And double the tears were
+              shed — Myop’s, heavy with fear, confusion and sadness; and her mother’s, full of guilt and
+              grief. Not for the poor man who remained in the forest — there came a time when one grew
+              used to such deaths — but for her little innocent child, and for the end of her laughter.
+              The world outside their cabin had claimed another piece of joy, as it always did. Myop’s
+              mother held her tighter, rocking her as the last light of afternoon slid through the cracks
+              in the boards. In the yard, the half-shucked corn lay scattered, yellow and soft against
+              the dust.
+            </p>
+            <p>
+              When Myop finally slept that night, her small hands still smelled faintly of flowers and
+              soil. Her mother sat awake beside the dying fire, staring into the dark, thinking of all
+              the summers that had ended before their time.
+            </p>
+          </div>
+        </div>
+
+        <!-- 16: VIOLETSTORM (octavo pliego, izquierda) -->
+        <div class="page content-page image-left">
+          <div class="page-inner">
+            <figure class="photo-figure">
+              <img src="violetstorm.jpg" alt="Dark, surreal scene suggesting danger and violence" />
+              <figcaption>
+                Violence lurking beneath innocence, like a storm behind bright colors.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 17: YESICA RAMÍREZ (octavo pliego, derecha) -->
+        <div class="page content-page story-right">
+          <div class="page-inner">
+            <h2>Yesica Ramírez</h2>
+            <p>
+              Myop started wandering back toward the house, back to the quiet of the morning. It was then
+              that she saw a little girl with skin as pale as snow and hair like gold, picking some orange
+              lilies from the ground. She looked at Myop with a friendly smile and asked her if she wanted
+              to come to her house and play with her. Myop accepted enthusiastically. While they walked
+              through the forest, a gloomy shadow flew over the girl's footprints slowly.
+            </p>
+            <p>
+              After walking to the track, Myop observed a luxurious house with amazement. Suddenly, the
+              little girl’s innocent face twisted into a wicked smile; she picked up a rock from the ground
+              and struck her on the head with brutal force. Myop felt how her body was lifted from the
+              ground and a noose stroked her neck. Through her half-closed eyes, she saw the little girl’s
+              wide, eerie grin — a big creepy smile — looking at her and holding the blue flowers with
+              velvety ridges in the middle of the mob, before her gaze sank into eternity.
+            </p>
+          </div>
+        </div>
+
+        <!-- 18: CAMPFLOWERS (noveno pliego, izquierda) -->
+        <div class="page content-page image-left">
+          <div class="page-inner">
+            <figure class="photo-figure">
+              <img src="campflowers.jpg" alt="Wide field of pink and purple wildflowers" />
+              <figcaption>
+                A field of wildflowers, holding both life and the memory of those lost.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 19: MICHELLE MIRÓ (noveno pliego, derecha) -->
+        <div class="page content-page story-right">
+          <div class="page-inner">
+            <h2>Michelle Miró</h2>
+            <p>
+              Myop stopped and looked at the bones under the big oak tree. Something shiny caught her
+              attention: a small old locket in the dirt. She picked it up, and when she opened it, there
+              was a tiny photo of a smiling family inside, but the picture was faded and hard to see.
+            </p>
+            <p>
+              Myop didn't know who they were, however, she felt an invading and overwhelming emotion:
+              sadness. Her heart shattered, and she felt the need to put the locket back beside the man.
+              She decided to plant the flowers she had found around him. She dug little holes with her
+              stick and placed the flowers carefully in the ground.
+            </p>
+            <p>
+              After finishing, she whispered, “Now you have flowers again.” Then she walked home slowly,
+              holding one last flower in her hand. That night, she put it next to her bed and thought
+              about the man and the tree. She didn't feel afraid, just thoughtful and quiet, because she
+              had returned the love that had been torn away from someone.
+            </p>
+          </div>
+        </div>
+
+        <!-- 20: MYOP (décimo pliego, izquierda) -->
+        <div class="page content-page image-left">
+          <div class="page-inner">
+            <figure class="photo-figure">
+              <img src="myop.jpg" alt="Pastel painting of a little girl in a pink dress standing among flowers" />
+              <figcaption>
+                Myop among the flowers, on the edge between childhood and awakening.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 21: GRISEL GONZÁLEZ TORRES (décimo pliego, derecha) -->
+        <div class="page content-page story-right story-tight">
+          <div class="page-inner">
+            <h2>Grisel González Torres</h2>
+            <p>
+              Some obscuring clouds drifted slowly, and the woods grew dark around the oak. Myop took
+              some time to look from the noose, frayed and evil above her, to the bones and the green
+              overall buckles below. Instantly, she could no longer feel the warmth of the sun. Instead,
+              she felt as though her heart had sunk in her chest, and her favorite melody could no longer
+              echo in her head.
+            </p>
+            <p>
+              Overwhelmed, her body began to yield under the sheer weight of her sorrow. She couldn’t
+              know who he was, but his overall was familiar to her. Laying her sprigs down — not as an
+              act of surrender but as an act of love and compassion — she felt the need, on the spur of
+              the moment, to break the silence and speak to him. And her voice, soft as her own,
+              delicately sang to him.
+            </p>
+            <p>
+              “I’m sorry I stepped on your nose,” she timidly said. “These are the flowers I picked up
+              from my walk. Now I feel as if I had carefully chosen them for you.”
+            </p>
+            <p>
+              Suddenly, as she slowly straightened with tears in her eyes, a new, hard determination set
+              in her ten-year-old face. Full of inspiration, she whispered to the skull, "Your name won't
+              be forgotten in this dirt."
+            </p>
+            <p>
+              As a final act, she took her knobby stick and used it to cover the man's exposed skull with
+              damp leaves. Then, she rearranged the remnants of the noose and slowly coiled it neatly
+              beneath the spreading oak.
+            </p>
+            <p>
+              Without hesitation, she found herself purposefully leading, not toward the comfort of home,
+              but toward the distant lights of her community. She would not sleep nor eat until her
+              mother and father, and all the neighbors, had come to the woods. He would have a name, he
+              would have a proper burial, and she would demand to know, "Why do they see us as if we were
+              so different? Why do they mistreat us?"
+            </p>
+            <p>
+              And the struggle had begun.
+            </p>
+          </div>
+        </div>
+
+        <!-- 22: FLOWERYPATH (nuevo pliego, izquierda) -->
+        <div class="page content-page image-left">
+          <div class="page-inner">
+            <figure class="photo-figure">
+              <img src="flowerypath.png" alt="Path of flowers leading into the woods" />
+              <figcaption>
+                A flowery path into the woods, where secrets, memories and hope take root.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- 23: DAVID HIPPERDINGER – A GROWING FUTURE (nuevo pliego, derecha) -->
+        <div class="page content-page story-right">
+          <div class="page-inner">
+            <h2>David Hipperdinger</h2>
+            <p>
+              Myop gazed around the spot with interest. Myop stood still for a very long time,
+              staring at the man's broken skull. The sun no longer felt hot to her, and the flowers
+              in her hand no longer felt pretty. Her heart raced, but not from fear, instead from an
+              overall new, heavy comprehension—that this land she loved so much had secrets and
+              stories it never shared, that were deeply planted like tree roots in the earth.
+            </p>
+            <p>
+              She ran home, the flowers dispersed behind her as she went. Later that evening, in the
+              fading light, Myop sat at the table with her mother and her grandmother and told them
+              everything. They listened in silence and then between them they sang a song she had never
+              heard about men and women who took and beat and killed their kind because their skin was
+              black like the dirt that covered the flowers she loved.
+            </p>
+            <p>
+              “It isn’t fair,” Myop whispered. “Why didn’t anybody stop it?”
+            </p>
+            <p>
+              "Because too many people knew it was wrong and said nothing," her grandmother sighed.
+              "But you must not be one of them."
+            </p>
+            <p>
+              From that night on, Myop saw her world differently. She understood that courage was not
+              just about being brave in the woods, it was about speaking up when silence was easier.
+              Like Atticus Finch standing alone in a courtroom, she learned that justice could only grow
+              if someone was willing to plant the first seed, even in hard soil.
+            </p>
+            <p>
+              And so, the summer did not truly end; it transformed. It became the season Myop began to
+              see, to question, and to dream of a world where no one’s story would be buried and
+              forgotten.
+            </p>
+          </div>
+        </div>
+
+        <!-- 24: EPILOGUE -->
+        <div class="page content-page epilogue-page">
+          <div class="page-inner">
+            <p class="tiny-label">EPILOGUE</p>
+            <h2>After the Flowers</h2>
+            <p>
+              These rewrites grew out of one short story, but they opened many paths: memory,
+              resistance, grief, community, and the fragile beauty of childhood. Each voice here
+              reimagines Myop’s walk through the woods from a different angle, linking literature
+              to history and to the present.
+            </p>
+            <p>
+              In PDLE 4 C1, creative writing becomes a space to question violence, to honour lives
+              erased from official narratives, and to explore how language can protect, denounce,
+              and heal. We hope these pages invite further reading, discussion and new stories
+              still to be written.
+            </p>
+          </div>
+        </div>
+
+        <!-- 25: CONTRATAPA / THANKS -->
+        <div class="page hard back final-back">
+          <div class="page-inner center">
+            <p class="tiny-label">PDLE 4 C1 · UNPAZ</p>
+            <h2>Thanks for reading!</h2>
+            <p class="small-note">
+              Thank you for accompanying these voices from PDLE 4 C1 at the Universidad
+              Nacional de José C. Paz. May these rewrites of <em>"The Flowers"</em> keep
+              blooming in new classrooms, conversations and future projects.
+            </p>
+            <div class="back-logo">
+              <img src="logo.png" alt="UNPAZ logo" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="arrow arrow-right" id="arrowNext">›</button>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Turn.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+  <!-- Lógica -->
+  <script src="script.js"></script>
+</body>
+</html>
