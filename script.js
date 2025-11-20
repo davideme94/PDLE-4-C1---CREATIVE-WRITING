@@ -21,8 +21,8 @@ $(function () {
     const isTabletLike = vw >= 900 && vw < 1024;
 
     // Casi sin márgenes → usamos TODO lo posible
-    const horizontalMargin = 0;              // sin margen lateral
-    const verticalMargin   = isDesktop ? 40 : 50; // muy poco margen arriba/abajo
+    const horizontalMargin = 0;
+    const verticalMargin   = isDesktop ? 40 : 50;
 
     const maxWidth  = vw - horizontalMargin;
     const maxHeight = vh - verticalMargin;
@@ -30,20 +30,16 @@ $(function () {
     let width, height;
 
     if (isDesktop || isTabletLike) {
-      // DOBLE página en escritorio / notebook
       const ratio = 1.6; // ancho = 1.6 * alto (dos páginas)
 
-      // Partimos del ancho máximo
       width  = maxWidth;
       height = width / ratio;
 
-      // Si la altura se pasa, reajustamos por alto
       if (height > maxHeight) {
         height = maxHeight;
         width  = height * ratio;
       }
     } else {
-      // CELU / TABLET chica → casi todo el espacio
       width  = maxWidth * 0.98;
       height = maxHeight;
 
@@ -60,7 +56,7 @@ $(function () {
   const initialSize = getBookSize();
 
   // ============================
-  // Inicializar libro: SOLO tapa
+  // Inicializar libro
   // ============================
   $book.turn({
     width: initialSize.width,
@@ -89,18 +85,18 @@ $(function () {
     $("#pageLabel").text(`Page ${page} of ${total}`);
   }
 
-  // Cuando se da vuelta la página
+  // ============================
+  // Cambio de página
+  // ============================
   $book.bind("turned", function (e, page) {
     const vw = window.innerWidth;
 
-    // En cuanto salís de la tapa => doble página SOLO si hay ancho
     if (page > 1 && !isDouble && vw >= 900) {
       $book.turn("display", "double");
       isDouble = true;
       resizeBook();
     }
 
-    // Si volvés a la tapa, volvemos a single
     if (page === 1 && isDouble) {
       $book.turn("display", "single");
       isDouble = false;
@@ -121,7 +117,7 @@ $(function () {
     $book.turn("next");
   });
 
-  // Click sobre el libro (izquierda/derecha)
+  // Click en mitades del libro
   $book.on("click", function (e) {
     const offset = $book.offset();
     const x = e.pageX - offset.left;
@@ -134,7 +130,7 @@ $(function () {
     }
   });
 
-  // Teclas de flecha
+  // Teclado
   $(document).on("keydown", function (e) {
     if (e.key === "ArrowLeft") {
       $book.turn("previous");
@@ -144,7 +140,7 @@ $(function () {
   });
 
   // ============================
-  // Overlay de orientación (móvil)
+  // Aviso de orientación
   // ============================
   const rotateNotice = document.querySelector(".rotate-notice");
 
@@ -163,12 +159,10 @@ $(function () {
     }
   }
 
-  // Llamadas iniciales
   resizeBook();
   updatePageLabel();
   checkOrientation();
 
-  // Redimensionar cuando cambia el tamaño de la ventana (con debounce)
   $(window).on("resize", function () {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function () {
@@ -178,4 +172,38 @@ $(function () {
   });
 
   window.addEventListener("orientationchange", checkOrientation);
+
+  // =============================================================
+  // 🟡 PANTALLA COMPLETA — BLOQUE NUEVO (NO TOCA NADA DEL CÓDIGO)
+  // =============================================================
+
+  const fullscreenBtn = document.getElementById("fullscreenBtn");
+
+  if (fullscreenBtn) {
+    fullscreenBtn.addEventListener("click", function () {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.warn("Error al entrar en fullscreen:", err);
+        });
+        document.body.classList.add("fullscreen-active");
+      } else {
+        document.exitFullscreen();
+        document.body.classList.remove("fullscreen-active");
+      }
+    });
+  }
+
+  // Auto–fullscreen al girar el celular (opcional)
+  function autoFullscreenOnRotate() {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+
+    if (w > h && !document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {});
+      document.body.classList.add("fullscreen-active");
+    }
+  }
+
+  window.addEventListener("orientationchange", autoFullscreenOnRotate);
 });
+
