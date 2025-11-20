@@ -6,17 +6,24 @@
   --text-main: #1f2933;
   --text-muted: #6b7280;
   --page-bg: #fdfdfb;
-  --hard-bg: linear-gradient(135deg, #1f2937, #020617);
+  --hard-bg: linear-gradient(135deg, #020617, #0f172a);
   --radius: 18px;
 }
 
-/* Reset */
+/* =========================
+   RESET
+   ========================= */
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {
@@ -26,9 +33,53 @@ body {
     radial-gradient(circle at top left, #dbeafe, #eff6ff 40%, #e5e7eb 80%),
     #e5e7eb;
   min-height: 100vh;
+  color: var(--text-main);
 }
 
-/* barra superior */
+/* =========================
+   AVISO ORIENTACIÓN (MÓVIL)
+   ========================= */
+.orientation-warning {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #020617, #020617 40%, #0b1120);
+  color: #f9fafb;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  z-index: 999;
+}
+
+.orientation-warning.visible {
+  display: flex;
+}
+
+.orientation-warning-inner {
+  max-width: 380px;
+}
+
+.orientation-warning h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.orientation-warning p {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.orientation-icon {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   BARRA SUPERIOR
+   ========================= */
 .top-bar {
   position: fixed;
   left: 0;
@@ -50,7 +101,9 @@ body {
   color: var(--text-muted);
 }
 
-/* fondo general con ilustración */
+/* =========================
+   FONDO GENERAL
+   ========================= */
 .magazine-bg {
   position: relative;
   min-height: 100vh;
@@ -73,12 +126,13 @@ body {
       rgba(230, 236, 255, 0.5)
     ),
     url("girlpickingflowers.jpg") center/cover no-repeat;
-  /* sin blur para que se vea bien la pintura */
   filter: none;
   z-index: -1;
 }
 
-/* contenedor libro + flechas */
+/* =========================
+   CONTENEDOR LIBRO + FLECHAS
+   ========================= */
 .flipbook-wrapper {
   position: relative;
   width: 100%;
@@ -88,7 +142,7 @@ body {
   align-items: center;
 }
 
-/* flechas laterales */
+/* Flechas laterales */
 .arrow {
   position: absolute;
   top: 50%;
@@ -121,25 +175,30 @@ body {
   right: 6px;
 }
 
-/* Turn.js seteará el tamaño; solo límites visuales */
+/* =========================
+   LIBRO (Turn.js)
+   ========================= */
 #flipbook {
   box-shadow: 0 32px 80px rgba(15, 23, 42, 0.7);
   background: linear-gradient(to right, #dbeafe, #eff6ff, #dbeafe);
   max-width: 100%;
+  margin: 0 auto;
 }
 
-/* cada página */
+/* Página genérica */
 #flipbook .page {
   background: var(--page-bg);
 }
 
-/* tapas */
+/* Tapas */
 #flipbook .hard {
   background: var(--hard-bg);
   color: #f9fafb;
 }
 
-/* contenido de tapa */
+/* =========================
+   PORTADA
+   ========================= */
 .cover-inner {
   height: 100%;
   padding: 60px 56px;
@@ -151,21 +210,56 @@ body {
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.08), transparent 60%);
 }
 
-.cover-inner h1 {
-  font-family: "Playfair Display", serif;
-  font-size: 3.4rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  margin-bottom: 14px;
+/* Logo arriba a la derecha */
+.cover-logo {
+  position: absolute;
+  top: 26px;
+  right: 30px;
 }
 
-.cover-inner .subtitle {
-  font-size: 1.05rem;
+.cover-logo img {
+  width: 86px;
+  height: auto;
+}
+
+/* Bloque principal de texto */
+.cover-main {
+  max-width: 640px;
+}
+
+.cover-main h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.6rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  color: #f9fafb;
+}
+
+.cover-main .subtitle {
+  font-size: 1.12rem;
   margin-bottom: 6px;
 }
 
-.cover-inner .tagline {
-  font-size: 0.95rem;
+.cover-main .tagline {
+  font-size: 1rem;
+  color: #e5e7eb;
+}
+
+.cover-divider {
+  width: 140px;
+  height: 3px;
+  border-radius: 999px;
+  margin: 20px 0 22px;
+  background: linear-gradient(90deg, #f97316, #facc15);
+  opacity: 0.9;
+}
+
+.cover-blurb {
+  max-width: 540px;
+  margin-top: 4px;
+  font-size: 0.98rem;
+  line-height: 1.8;
   color: #e5e7eb;
 }
 
@@ -177,12 +271,9 @@ body {
   margin-bottom: 12px;
 }
 
-.inner-cover .inner-text {
-  padding: 44px 40px;
-  color: #e5e7eb;
-}
-
-/* páginas internas */
+/* =========================
+   PÁGINAS INTERNAS
+   ========================= */
 .page-inner {
   padding: 32px 32px 28px;
   height: 100%;
@@ -214,7 +305,7 @@ body {
   line-height: 1.7;
 }
 
-/* estilo general de páginas de contenido */
+/* Páginas de contenido */
 .content-page {
   background: radial-gradient(circle at top left, #fdfcf9, #f7f7f4);
 }
@@ -227,7 +318,7 @@ body {
   padding-bottom: 40px;
 }
 
-/* pequeño label abajo tipo revista */
+/* Etiqueta revista abajo */
 .content-page .page-inner::after {
   content: "PDLE 4 C1 · UNPAZ";
   position: absolute;
@@ -239,7 +330,9 @@ body {
   color: #9ca3af;
 }
 
-/* foto flores */
+/* =========================
+   PÁGINAS DE IMAGEN
+   ========================= */
 .photo-figure {
   display: flex;
   flex-direction: column;
@@ -249,7 +342,7 @@ body {
 .photo-figure img {
   width: 95%;
   height: 100%;
-  max-height: 80vh;           /* foto más grande */
+  max-height: 80vh;
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 20px 48px rgba(15, 23, 42, 0.5);
@@ -260,11 +353,13 @@ body {
   color: var(--text-muted);
 }
 
-/* texto historia */
+/* =========================
+   PÁGINAS DE TEXTO
+   ========================= */
 .story-right h2 {
   position: relative;
   font-family: "Playfair Display", serif;
-  font-size: 2.1rem;          /* título más grande */
+  font-size: 2.1rem;
   margin-bottom: 22px;
 }
 
@@ -282,13 +377,13 @@ body {
 }
 
 .story-right p {
-  font-size: 1.2rem;          /* texto más grande */
-  line-height: 1.95;          /* más aire entre líneas */
+  font-size: 1.2rem;
+  line-height: 1.95;
   margin-bottom: 16px;
   text-align: justify;
 }
 
-/* drop-cap en el primer párrafo */
+/* Drop cap primer párrafo */
 .story-right p:first-of-type::first-letter {
   font-family: "Playfair Display", serif;
   font-size: 3.2rem;
@@ -303,25 +398,85 @@ body {
   color: var(--text-muted);
 }
 
-/* Centrar verticalmente la foto y el cuento en sus páginas */
+/* Centrar verticalmente foto y cuento */
 .image-left .page-inner,
 .story-right .page-inner {
-  justify-content: center;   /* centra verticalmente */
+  justify-content: center;
 }
 
-/* Centrar la foto también en horizontal */
+/* Foto centrada horizontal */
 .image-left .page-inner {
-  align-items: center;       /* centro horizontal */
+  align-items: center;
 }
 
-/* Limitar el ancho del texto y centrar el bloque */
+/* Texto algo más ancho y centrado */
 .story-right .page-inner {
-  max-width: 92%;            /* texto ocupa más ancho de la página */
+  max-width: 92%;
   margin: 0 auto;
 }
 
-/* --------- MEDIA QUERIES --------- */
+/* Historias largas (ajuste fino) */
+.story-tight p {
+  font-size: 1.1rem !important;
+  line-height: 1.45 !important;
+}
 
+.story-tight h2 {
+  font-size: 1.9rem !important;
+  margin-bottom: 14px !important;
+}
+
+/* =========================
+   EPÍLOGO
+   ========================= */
+.epilogue-page .page-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.epilogue-page h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.3rem;
+  margin: 10px 0 22px;
+}
+
+.epilogue-page p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+/* =========================
+   CONTRATAPA
+   ========================= */
+.final-back .page-inner {
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.05), transparent 60%);
+  padding: 50px 36px 40px;
+}
+
+.final-back h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.1rem;
+  margin: 10px 0 16px;
+}
+
+.back-logo {
+  margin-top: 28px;
+}
+
+.back-logo img {
+  width: 110px;
+  height: auto;
+  opacity: 0.96;
+}
+
+/* =========================
+   MEDIA QUERIES
+   ========================= */
+
+/* PANTALLAS MEDIANAS */
 @media (max-width: 900px) {
   .magazine-bg {
     padding: 60px 4px 12px;
@@ -332,14 +487,19 @@ body {
   }
 
   .photo-figure img {
-    max-height: 60vh;        /* un poco menos alta en pantallas medianas */
+    max-height: 60vh;
   }
 
-  .cover-inner h1 {
-    font-size: 2.6rem;
+  .cover-main h1 {
+    font-size: 2.8rem;
+  }
+
+  .cover-main {
+    max-width: 520px;
   }
 }
 
+/* CELU / TABLET CHICA */
 @media (max-width: 720px) {
   .top-bar {
     font-size: 0.8rem;
@@ -356,7 +516,15 @@ body {
     font-size: 1.4rem;
   }
 
-  .cover-inner h1 {
+  .cover-inner {
+    padding: 46px 26px 40px;
+  }
+
+  .cover-logo img {
+    width: 70px;
+  }
+
+  .cover-main h1 {
     font-size: 2.1rem;
     letter-spacing: 0.18em;
   }
@@ -371,75 +539,48 @@ body {
   }
 
   .story-right p {
-    font-size: 1.05rem;      /* un poco más chico en celu para que entre */
+    font-size: 1.05rem;
   }
 }
 
-/* Para historias largas que necesitan entrar en una sola página */
-.story-tight p {
-  font-size: 1.1rem !important;
-  line-height: 1.45 !important;
-}
-
-.story-tight h2 {
-  font-size: 1.9rem !important;
-  margin-bottom: 14px !important;
-}
-
-/* ===========================
-   AVISO GIRAR EN CELULAR
-   =========================== */
-
-.rotate-notice {
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.94);
-  display: none;              /* se muestra solo con media query */
-  align-items: center;
-  justify-content: center;
-  z-index: 50;                /* por encima de todo */
-  text-align: center;
-  padding: 24px;
-}
-
-.rotate-card {
-  background: radial-gradient(circle at top, #1f2937, #020617);
-  border-radius: 18px;
-  padding: 24px 22px 20px;
-  max-width: 360px;
-  width: 100%;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
-  color: #e5e7eb;
-  border: 1px solid rgba(148, 163, 184, 0.4);
-}
-
-.rotate-icon {
-  font-size: 2.4rem;
-  margin-bottom: 10px;
-}
-
-.rotate-card h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.4rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.rotate-card p {
-  font-size: 0.98rem;
-  line-height: 1.7;
-  color: #cbd5f5;
-}
-
-/* En celulares en VERTICAL mostrar el cartel y bloquear el libro */
-@media (max-width: 900px) and (orientation: portrait) {
-  .rotate-notice {
-    display: flex;
+/* PANTALLAS GRANDES */
+@media (min-width: 1400px) {
+  body {
+    font-size: 17px;
   }
 
-  .flipbook-wrapper {
-    filter: blur(4px);
-    pointer-events: none;   /* que no toquen nada hasta girar */
+  .magazine-bg {
+    padding: 70px 40px 40px;
+  }
+
+  #flipbook {
+    max-width: 90vw;
+  }
+
+  .cover-main h1 {
+    font-size: 3.8rem;
+  }
+}
+
+/* PANTALLAS MUY GRANDES (ULTRAWIDE / 4K) */
+@media (min-width: 1800px) {
+  body {
+    font-size: 18px;
+  }
+
+  .magazine-bg {
+    padding: 80px 60px 60px;
+  }
+
+  #flipbook {
+    max-width: 80vw;
+  }
+
+  .cover-main h1 {
+    font-size: 4.2rem;
+  }
+
+  .story-right p {
+    font-size: 1.25rem;
   }
 }
