@@ -748,3 +748,34 @@ body {
   padding-right: 5px;
   padding-top: 2px;
 }
+
+/* =========================
+   PANTALLA COMPLETA – BOTÓN
+   ========================= */
+.fullscreen-btn {
+  margin-left: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(15, 23, 42, 0.08);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.fullscreen-btn:hover {
+  background: rgba(15, 23, 42, 0.16);
+  color: #111827;
+  transform: translateY(-1px);
+}
+
+body.fullscreen-active .fullscreen-btn {
+  background: #111827;
+  color: #f9fafb;
+}
+
+}
