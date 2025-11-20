@@ -385,3 +385,61 @@ body {
   font-size: 1.9rem !important;
   margin-bottom: 14px !important;
 }
+
+/* ===========================
+   AVISO GIRAR EN CELULAR
+   =========================== */
+
+.rotate-notice {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.94);
+  display: none;              /* se muestra solo con media query */
+  align-items: center;
+  justify-content: center;
+  z-index: 50;                /* por encima de todo */
+  text-align: center;
+  padding: 24px;
+}
+
+.rotate-card {
+  background: radial-gradient(circle at top, #1f2937, #020617);
+  border-radius: 18px;
+  padding: 24px 22px 20px;
+  max-width: 360px;
+  width: 100%;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.rotate-icon {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.rotate-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.rotate-card p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #cbd5f5;
+}
+
+/* En celulares en VERTICAL mostrar el cartel y bloquear el libro */
+@media (max-width: 900px) and (orientation: portrait) {
+  .rotate-notice {
+    display: flex;
+  }
+
+  .flipbook-wrapper {
+    filter: blur(4px);
+    pointer-events: none;   /* que no toquen nada hasta girar */
+  }
+}
